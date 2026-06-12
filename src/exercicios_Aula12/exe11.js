@@ -5,12 +5,10 @@ import leia from 'readline-sync'
 var timeA_gols = leia.questionInt('Digite a quantidade de gols do Time A: ')
 var timeB_gols = leia.questionInt('Digite a quantidade de gols do Time B: ')
 
-var diferenca
-
 if(timeA_gols > timeB_gols){
-    diferenca = timeA_gols - timeB_gols
+    var diferenca = timeA_gols - timeB_gols
 }else{
-    diferenca = timeB_gols - timeA_gols
+    var diferenca = timeB_gols - timeA_gols
 }
 
 if(diferenca === 0){
