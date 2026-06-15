@@ -18,7 +18,7 @@ var valorM5 = N5cent * 0.05
 
 var totalCofre = valorM1 + valorM50 + valorM25 + valorM10 + valorM5
 
-if(totalCofre > valorProduto){
+if(totalCofre >= valorProduto){
     console.log(`O valor do produto é: R$ ${valorProduto.toFixed(2)} e você tem R$ ${totalCofre.toFixed(2)} no cofrinho. PODE COMPRAR`)
 }else if(totalCofre < valorProduto){
     console.log(`O valor do produto é: R$ ${valorProduto.toFixed(2)} e você tem R$ ${totalCofre.toFixed(2)} no cofrinho. NÃO PODE COMPRAR`)
