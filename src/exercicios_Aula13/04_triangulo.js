@@ -1,6 +1,25 @@
-import leia from 'readline-sync'
+var readline = require('readline-sync');
 
-var lado1 = leia.questionFloat("Digite o valor do lado 1: ")
-var lado2 = leia.questionFloat("Digite o valor do lado 2: ")
-var lado3 = leia.questionFloat("Digite o valor do lado 3: ")
+var lado1 = Number(readline.question('Digite o primeiro lado: '));
+var lado2 = Number(readline.question('Digite o segundo lado: '));
+var lado3 = Number(readline.question('Digite o terceiro lado: '));
 
+if (lado1 + lado2 > lado3 &&
+    lado1 + lado3 > lado2 &&
+    lado2 + lado3 > lado1) {
+
+    console.log('Os lados podem formar um triângulo.');
+
+    if (lado1 == lado2 && lado2 == lado3) {
+        console.log('Triângulo Equilátero');
+    } 
+    else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+        console.log('Triângulo Isósceles');
+    } 
+    else {
+        console.log('Triângulo Escaleno');
+    }
+
+} else {
+    console.log('Os lados não podem formar um triângulo.');
+}
