@@ -1,8 +1,8 @@
 var readline = require('readline-sync');
 
-var lado1 = Number(readline.question('Digite o primeiro lado: '));
-var lado2 = Number(readline.question('Digite o segundo lado: '));
-var lado3 = Number(readline.question('Digite o terceiro lado: '));
+var lado1 = leia.questionFloat('Digite o primeiro lado: ');
+var lado2 = leia.questionFloat('Digite o segundo lado: ');
+var lado3 = leia.questionFloat('Digite o terceiro lado: ');
 
 if (lado1 + lado2 > lado3 &&
     lado1 + lado3 > lado2 &&
