@@ -1,4 +1,4 @@
-var readline = require('readline-sync');
+import leia from 'readline-sync'
 
 var lado1 = leia.questionFloat('Digite o primeiro lado: ');
 var lado2 = leia.questionFloat('Digite o segundo lado: ');
