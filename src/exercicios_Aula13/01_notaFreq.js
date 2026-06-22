@@ -6,15 +6,16 @@ var nota3 = leia.questionFloat("Digite a terceira nota: ")
 var nota4 = leia.questionFloat("Digite a quarta nota: ")
 var nota5 = leia.questionFloat("Digite a quinta nota: ")
 
+var qtdDiasPresentes = leia.questionInt("Digite a quantidade de dias presentes: ")
 var media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5.0
 
-var freq = leia.questionInt("Digite sua frequencia, entre 0 a 100: ")
+var freq = (qtdDiasPresentes / 200) * 100
 
-if(media >= 7.0 && freq >= 75 && freq <= 100){
-    console.log(`Sua média: ${media.toFixed(2)} . Sua Frequência: ${freq}`)
+if(media >= 7.0 && freq >= 75.0){
+    console.log(`Sua média: ${media.toFixed(2)} ; Sua Frequência: ${freq.toFixed(1)} %`)
     console.log("Você está aprovado")
 }else{
-    console.log(`Sua média: ${media.toFixed(2)} . Sua Frequência: ${freq}`)
+    console.log(`Sua média: ${media.toFixed(2)} ; Sua Frequência: ${freq.toFixed(1)} %`)
     console.log("Você está reprovado")
 }
 
