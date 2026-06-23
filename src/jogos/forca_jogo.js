@@ -69,4 +69,18 @@ var letrasErradas = [];
 var tentativas = 6;
 var venceu = false;
 
-var palavraSecreta = palavras[Math.floor(Math.random() + palavras.length)];
+var palavraSecreta = palavras[Math.floor(Math.random() * palavras.length)];
+
+do{
+  var escolha = leia.keyInSelect(fios, `Escolha um fio para cortar, voce possui: ${tentativas} tentativas!`)
+  var fioEscolhido = fios[escolha]
+  
+  if(letrasCertas === palavraSecreta){
+    console.log(`Você acertou a palavra`)
+    venceu = true
+  }else{
+    console.log(`Você errou a palavra: ${palavraSecreta}`)
+    tentativas--
+    palavras.splice(escolha, 6)
+  }
+}while(tentativas > 0 && venceu === false)
