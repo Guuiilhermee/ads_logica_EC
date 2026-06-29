@@ -1,6 +1,5 @@
 import leia from 'readline-sync';
 
-
 const partes = [
   `
   +---+
