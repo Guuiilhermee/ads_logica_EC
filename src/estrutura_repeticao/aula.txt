@@ -1,0 +1,10 @@
+terça 30/06 docente trainne
+- correção de prova
+
+estruturas de repetição
+trecho/bloco de instruções - repetidas vezes
+condição
+
+while, do...while, for
+
+forEach, map, filter, reduce (listas, vetores)
