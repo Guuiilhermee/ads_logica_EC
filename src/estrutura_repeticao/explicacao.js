@@ -1,6 +1,6 @@
 import leia from 'readline-sync'
 
-// DO WHILE
+// DO WHILE 01
 /*
 var numero = 10
 
@@ -22,7 +22,7 @@ while(qtd < 500){
     qtd++
 } */
 
-// WHILE
+// WHILE 01
 /* 
 var senha = ""
 var tentativas = 3
@@ -60,7 +60,8 @@ while(contador <= qtd){
 var media = somaNotas / qtd
 console.log(media.toFixed(2)) */
 
-// FOR
+// FOR 01
+/*
 var somaNotas = 0
 var qtd = 3
 for(var i = 1; i <= qtd; i++){
@@ -75,3 +76,42 @@ for(var i = 1; i <= qtd; i++){
 }
 var media = somaNotas / qtd
 console.log(media.toFixed(2))
+*/
+
+// WHILE 02
+/*
+var somaNotas = 0
+var contador = 1
+var qtd = 3
+var finalizouNotas = false
+while(finalizouNotas === false){
+    var nota = leia.questionFloat("DIGITE A NOTA: " + contador + " : ")
+    somaNotas = somaNotas + nota
+
+    if(contador === qtd){
+        finalizouNotas = true
+    }
+    contador++
+}
+var media = somaNotas / qtd
+console.log(media.toFixed(2)) 
+*/
+
+// DO WHILE 02
+var contador = 1
+var qtd = 3
+var somaNotas = 0
+do{
+    var nota = leia.questionFloat("Digite a nota da prova " + contador + ": ")
+
+    while(nota > 10 || nota < 0){
+        console.log("Digite uma nota entre 0 e 10")
+        var nota = leia.questionFloat("Digite a nota da prova " + contador + ": ")
+    }
+
+    somaNotas = somaNotas + nota
+    contador++
+}while(contador <= qtd)
+
+var media = somaNotas / qtd
+console.log("MEDIA: " + media.toFixed(2))
