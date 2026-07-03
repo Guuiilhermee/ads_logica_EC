@@ -8,3 +8,11 @@ condição
 while, do...while, for
 
 forEach, map, filter, reduce (listas, vetores)
+
+quarta 01/07
+- tinkercad
+
+quinta 02/07
+listas vetores FOR
+valor booleano WHILE
+!
