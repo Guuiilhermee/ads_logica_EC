@@ -4,11 +4,9 @@ var contador = 0;
 
 while (true) {
     var numero = leia.questionInt("Digite um numero (0 para encerrar): ");
-
     if (numero === 0) {
         break;
     }
-
     if (numero > 100 && numero < 200) {
         contador++;
     }
