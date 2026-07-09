@@ -5,7 +5,7 @@ var somaImpares = 0;
 var produtoPares = 1;
 
 while (contador <= 6) {
-    var numero = leia.questionInt(`Digite o ${contador} - numero inteiro e positivo:`);
+    var numero = leia.questionInt(`Digite UM NUMERO ${contador} - inteiro e positivo: `);
 
     if (numero % 2 === 0) {
         produtoPares *= numero;
