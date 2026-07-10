@@ -18,7 +18,7 @@ var direcao = "d";
 var gameOver = false;
 
 function desenhar(){
-    var tela = "";
+    var tela = "\n";
     tela += "=== JOGO DA COBRINHA ===\n";
     tela += "W A S D = MOVER | Q = sair\n";
     tela += "Pontos " + pontos + "\n\n";
@@ -32,7 +32,17 @@ function desenhar(){
             }else if(x === comidaX && y === comidaY){
                 linha += COMIDA;
             }else{
-                linha += VAZIO;
+                var desenhouCobrinha = false;
+
+                for(var i = 0; i < cobraX.length; i++){
+                    if(cobraX[i] === x && cobraY[i] === y){
+                        linha += (i === 0) ? CABECA : CORPO;
+                        desenhouCobrinha = true;
+                    }
+                }
+                if(desenhouCobrinha === false){
+                    linha += VAZIO
+                }
             }
         }
         tela += linha + "\n"
