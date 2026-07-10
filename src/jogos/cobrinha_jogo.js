@@ -1,8 +1,8 @@
-const PAREDE = "⬜";
+const PAREDE = "🧱";
 const VAZIO = "⬛";
 const CABECA = "🟢";
 const CORPO = "🟩";
-const COMIDA = "🔴";
+const COMIDA = "🍎";
 
 const LARGURA = 30; // X
 const ALTURA = 15; // Y
