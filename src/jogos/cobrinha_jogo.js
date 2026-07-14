@@ -9,6 +9,8 @@ const COMIDA = "🍎";
 const LARGURA = 30; // X
 const ALTURA = 15; // Y
 
+var velocidade = 150
+
 var cobraX = [10, 9, 8, 7];
 var cobraY = [7, 7, 7, 7];
 
@@ -133,6 +135,7 @@ function moverCobrinha(){
 
     if(novaPosicaoX === comidaX && novaPosicaoY === comidaY){
         pontos += 10;
+        velocidade -= 10
         sortearComida()
     }else{
         cobraX.pop();
