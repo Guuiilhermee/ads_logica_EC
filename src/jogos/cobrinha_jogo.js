@@ -41,7 +41,7 @@ process.stdin.on("keypress", (str, key) => {
     }
 
     if(key.name === "q"){
-        process.exit();
+        gameOver = true;
     }
 });
 
@@ -116,6 +116,18 @@ function moverCobrinha(){
             break;
     }
 
+    if(novaPosicaoX < 0 || novaPosicaoX >= LARGURA || novaPosicaoY < 0 || novaPosicaoY >= ALTURA){
+        gameOver = true;
+        return;
+    }
+
+    for(var i = 0; i < cobraX.length; i++){
+        if(novaPosicaoX === cobraX[i] && novaPosicaoY === cobraY[i]){
+            gameOver = true
+            return
+        }
+    }
+
     cobraX.unshift(novaPosicaoX);
     cobraY.unshift(novaPosicaoY);
 
@@ -123,10 +135,19 @@ function moverCobrinha(){
     cobraY.pop();
 }
 
-setInterval(() =>{
+var jogo = setInterval(() =>{
+
+    if(gameOver === true){
+        clearInterval(jogo);
+        process.stdout.write("\x1b[?25h")
+        console.log("\n=== GAME OVER ===")
+        console.log("Pontucação final: " + pontos)
+        process.exit()
+    }
+
     moverCobrinha();
     desenhar();
 }, 150);
 
-sortearComida();
-desenhar();
+// sortearComida();
+// desenhar();
