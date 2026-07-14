@@ -144,19 +144,19 @@ function moverCobrinha(){
 
 }
 
-var jogo = setInterval(() =>{
-
-    if(gameOver === true){
-        clearInterval(jogo);
-        process.stdout.write("\x1b[?25h")
-        console.log("\n=== GAME OVER ===")
-        console.log("Pontucação final: " + pontos)
-        process.exit()
+function rodarJogo() {
+    if (gameOver === true) {
+        process.stdout.write("\x1b[?25h");
+        console.log("\n=== GAME OVER ===");
+        console.log("Pontuação final: " + pontos);
+        process.exit();
     }
 
     moverCobrinha();
     desenhar();
-}, 150);
 
-// sortearComida();
-// desenhar();
+    const proximoIntervalo = Math.max(velocidade, 50); 
+    setTimeout(rodarJogo, proximoIntervalo);
+}
+
+rodarJogo();
