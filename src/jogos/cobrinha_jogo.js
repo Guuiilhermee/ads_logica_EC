@@ -126,7 +126,7 @@ function moverCobrinha(){
 setInterval(() =>{
     moverCobrinha();
     desenhar();
-}, 1000);
+}, 150);
 
 sortearComida();
 desenhar();
