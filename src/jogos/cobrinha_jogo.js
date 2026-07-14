@@ -131,8 +131,14 @@ function moverCobrinha(){
     cobraX.unshift(novaPosicaoX);
     cobraY.unshift(novaPosicaoY);
 
-    cobraX.pop();
-    cobraY.pop();
+    if(novaPosicaoX === comidaX && novaPosicaoY === comidaY){
+        pontos += 10;
+        sortearComida()
+    }else{
+        cobraX.pop();
+        cobraY.pop();
+    }
+
 }
 
 var jogo = setInterval(() =>{
