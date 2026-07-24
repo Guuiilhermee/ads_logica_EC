@@ -12,12 +12,15 @@ for (var i = 0; i < 10; i++) {
 console.log("\n=== VETOR ORIGINAL ===");
 console.log(numeros);
 
-var numerosInvertidos = numeros.slice().reverse();
+var numerosInvertidos = [];
+for (var i = numeros.length - 1; i >= 0; i--) {
+    numerosInvertidos.push(numeros[i]);
+}
 
 console.log("\n=== VETOR INVERTIDO ===");
 console.log(numerosInvertidos);
 
 console.log("\n=== DETALHAMENTO DA INVERSÃO ===");
 for (var i = 0; i < numeros.length; i++) {
-    console.log(`Posição ${i}: ${numeros[i]} → Posição ${numeros.length - 1 - i}: ${numerosInvertidos[i]}`);
+    console.log(`Posição ${i}: ${numeros[i]} Posição ${numeros.length - 1 - i}: ${numerosInvertidos[i]}`);
 }
