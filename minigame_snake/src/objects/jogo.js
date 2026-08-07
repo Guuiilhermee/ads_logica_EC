@@ -1,4 +1,5 @@
 import { CONFIGURACOES, SIMBOLOS } from "../config/config.js"
+import { cobra } from "./cobra.js"
 
 function iniciar(dificuldade){
     console.log(dificuldade)
@@ -16,7 +17,16 @@ function desenhar(){
             if(x === -1 || x === CONFIGURACOES.largura || y === -1 || y === CONFIGURACOES.altura){
                 linha += SIMBOLOS.parede
             }else{
-                linha += SIMBOLOS.vazio
+                var desenhouCobra = false
+                for(var i = 0; i < cobra.partes.length; i++){
+                    if(cobra.partes[i].x === x && cobra.partes[i].y === y){
+                        linha += (i === 0) ? SIMBOLOS.cabeca : SIMBOLOS.corpo
+                        desenhouCobra = true
+                    }
+                }
+                if(desenhouCobra == false){
+                    linha += SIMBOLOS.vazio
+                }
             }
         }
         tela += linha + "\n"
